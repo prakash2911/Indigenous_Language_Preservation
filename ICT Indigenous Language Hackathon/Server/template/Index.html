@@ -1,0 +1,533 @@
+{% extends 'base.html'%}
+{% block head%}
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta name="description" content="Responsive Bootstrap4 Shop Template, Created by Imran Hossain from https://imransdesign.com/">
+
+	<!-- title -->
+	<title>Language perservation</title>
+
+	<!-- favicon -->
+	<link rel="shortcut icon" type="image/png" href="../static/img/logo.png">
+	<!-- google font -->
+	<link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,700" rel="stylesheet">
+	<link href="https://fonts.googleapis.com/css?family=Poppins:400,700&display=swap" rel="stylesheet">
+	<!-- fontawesome -->
+	<link rel="stylesheet" href="https://fonts.sandbox.google.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
+	<link rel="stylesheet" href="../static/css/all.min.css">
+	<!-- bootstrap -->
+	<link rel="stylesheet" href="../static/bootstrap/css/bootstrap.min.css">
+	<!-- owl carousel -->
+	<link rel="stylesheet" href="../static/css/owl.carousel.css">
+	<!-- magnific popup -->
+	<link rel="stylesheet" href="../static/css/magnific-popup.css">
+	<!-- animate css -->
+	<link rel="stylesheet" href="../static/css/animate.css">
+	<!-- mean menu css -->
+	<link rel="stylesheet" href="../static/css/meanmenu.min.css">
+	<!-- main style -->
+	<link rel="stylesheet" href="../static/css/main.css">
+	<!-- responsive -->
+	<link rel="stylesheet" href="../static/css/responsive.css">
+
+</head>
+{%endblock%}
+{% block body %}
+	
+	<!--PreLoader-->
+    <div class="loader">
+        <div class="loader-inner">
+            <div class="circle"></div>
+        </div>
+    </div>
+    <!--PreLoader Ends-->
+	
+	<!-- header -->
+	<div class="top-header-area" id="sticker">
+		<div class="container">
+			<div class="row">
+				<div class="col-lg-12 col-sm-12 text-center">
+					<div class="main-menu-wrap">
+						<!-- logo -->
+						<div class="site-logo">
+							<a href="index.html" >
+								<h3 style="color: rgb(3, 3, 3);">LANGUAGE PRESERVATION</h3> 
+							</a>
+						</div>
+						<!-- logo -->
+
+						<!-- menu start -->
+						<nav class="main-menu">
+							<ul>
+								<li><a href="#" style="color: rgb(3, 3, 3);font-size: 20px;">HOME</a></li>
+								<li><a href="#" style="color: rgb(3, 3, 3);font-size: 20px;">ABOUT</a></li>
+								<li><a href="#" style="color: rgb(3, 3, 3);font-size: 20px;">COURSES</a>
+									<ul class="sub-menu">
+										<li><a href="#" style="color: rgb(3, 3, 3);">Sanskrit</a></li>
+									</ul>
+								</li>
+								<li><a href="#Contact" style="color: rgb(3, 3, 3);font-size: 20px;">CONTACT</a></li>
+							</ul>
+						</nav>
+						<div class="mobile-menu"></div>
+						<!-- menu end -->
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	<!-- end search area -->
+	
+	<!-- home page slider -->
+	<div class="homepage-slider">
+		<!-- single home slider -->
+		<div class="single-homepage-slider homepage-bg-1">
+			<div class="container">
+				<div class="row">
+					<div class="col-md-12 col-lg-7 offset-lg-1 offset-xl-0">
+						<div class="hero-text">
+							<div class="hero-text-tablecell">
+								<p class="subtitle" >some text</p>
+								<h1 style="color: rgb(3, 3, 3);">SOME TEXT</h1>
+								<div class="hero-btns">
+									<a href="/ls" class="boxed-btn">Join Now</a>
+									<a href="#Contact" class="bordered-btn" style="color: rgb(3, 3, 3);">Contact Us</a>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<!-- single home slider -->
+		<div class="single-homepage-slider homepage-bg-2">
+			<div class="container">
+				<div class="row">
+					<div class="col-lg-10 offset-lg-1 text-center">
+						<div class="hero-text">
+							<div class="hero-text-tablecell">
+								<p class="subtitle">some text</p>
+								<h1 style="color: rgb(3, 3, 3);">SOME TEXT</h1>
+								<div class="hero-btns">
+									<a href="login.html" class="boxed-btn">Join Now</a>
+									<a href="#Contact" class="bordered-btn" style="color: rgb(3, 3, 3);">Contact Us</a>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<!-- single home slider -->
+		<div class="single-homepage-slider homepage-bg-3">
+			<div class="container">
+				<div class="row">
+					<div class="col-lg-10 offset-lg-1 text-right">
+						<div class="hero-text">
+							<div class="hero-text-tablecell">
+								<p class="subtitle">some text</p>
+								<h1 style="color: rgb(3, 3, 3);">SOME TEXT</h1>
+								<div class="hero-btns">
+									<a href="login.html" class="boxed-btn">Join Now</a>
+									<a href="#Contact" class="bordered-btn" style="color: rgb(3, 3, 3);">Contact Us</a>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	<!-- end home page slider -->
+
+	<!-- features list section -->
+	<div class="list-section pt-80 pb-80">
+		<div class="container">
+
+			<div class="row">
+				<div class="col-lg-4 col-md-6 mb-4 mb-lg-0">
+					<div class="list-box d-flex align-items-center">
+						
+						<div class="content">
+							<h3> Free Learning</h3>
+							<p> you can learn several languages for free</p>
+						</div>
+					</div>
+				</div>
+				<div class="col-lg-4 col-md-6 mb-4 mb-lg-0">
+					<div class="list-box d-flex align-items-center">
+						
+						<div class="content">
+							<h3>preserve the indigenous language</h3>
+							<p>you can preserve several language and empower it</p>
+						</div>
+					</div>
+				</div>
+				<div class="col-lg-4 col-md-6">
+					<div class="list-box d-flex justify-content-start align-items-center">
+						<div class="content">
+							<h3>Get yours content verifed</h3>
+							<p>the contents which you are uploading are verified by certified professor</p>
+						</div>
+					</div>
+				</div>
+			
+			</div>
+
+		</div>
+	</div>
+	<!-- end features list section -->
+
+	<!-- product section -->
+	<div class="product-section mt-150 mb-150">
+		<div class="container">
+			<div class="row">
+				<div class="col-lg-8 offset-lg-2 text-center">
+					<div class="section-title">	
+						<h3><span class="orange-text">Our</span> COURSES</h3>
+						<p>This courses are free for everyone and they will be ceritifed at the end of the course</p>
+					</div>
+				</div>
+			</div>
+
+			<div class="row">
+				<div class="col-lg-4 col-md-6 text-center">
+					<div class="single-product-item">
+						<div class="product-image">
+							<a><img src="../static/img/course/course1.png" alt=""></a>
+						</div>
+						<h3>संस्कृतं</h3>
+						<p class="product-price"><span>SANSKRIT</span> an ancient Indo-Aryan language that is the classical language of India and of Hinduism</p>
+						<a class="cart-btn" onclick="document.getElementById('more1').classList.remove('js-hidden')">Take Course</a><br><br>
+						<div class="alert js-hidden" id="more1">
+							<span class="closebtn" onclick="document.getElementById('more1').classList.add('js-hidden')">&times;</span>
+							<strong>Sorry!</strong> This course is not available now.
+						</div>
+					</div>	
+				</div>
+				<div class="col-lg-4 col-md-6 text-center">
+					<div class="single-product-item">
+						<div class="product-image">
+							<a href="#more2"><img src="../static/img/course/course2.jpg" alt=""></a>
+						</div>
+						<h3>தமிழ்</h3>
+						<p class="product-price"><span>Tamil</span> Tamil is an official language of the Indian state of Tamil Nadu, the sovereign nations of Sri Lanka and Singapore,and Puducherry.  </p>
+						<a class="cart-btn" onclick="document.getElementById('more2').classList.remove('js-hidden')">Take Course</a><br><br>
+						<div class="alert js-hidden" id="more2">
+							<span class="closebtn" onclick="document.getElementById('more2').classList.add('js-hidden')">&times;</span>
+							<strong>Sorry!</strong> This course is not available now.
+						</div>
+					</div>
+				</div>
+				<div class="col-lg-4 col-md-6 offset-md-3 offset-lg-0 text-center">
+					<div class="single-product-item">
+						<div class="product-image">
+							<a href="single-product.html"><img src="../static/img/course/course3.jpg" alt=""></a>
+						</div>
+						<h3>latin</h3>
+						<p class="product-price"><span>Latin</span> the Italic language of ancient Latium and of Rome and until modern times the dominant language of school,and state in western Europe </p>
+						<a class="cart-btn" onclick="document.getElementById('more3').classList.remove('js-hidden')">Take Course</a><br><br>
+						<div class="alert js-hidden" id="more3">
+							<span class="closebtn" onclick="document.getElementById('more3').classList.add('js-hidden')">&times;</span>
+							<strong>Sorry!</strong> This course is not available now.
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	<!-- end product section -->
+
+	<!-- cart banner section -->
+	<section class="cart-banner pt-100 pb-100">
+    	<div class="container">
+        	<div class="row clearfix">
+            	<!--Image Column-->
+            	<div class="image-column col-lg-6">
+                	<div class="image">
+                    	<div class="price-box">
+                        	<div class="inner-price">
+                                <span class="price">
+                                    <strong>6700</strong> <br> language
+                                </span>
+                            </div>
+                        </div>
+                    	<img src="../static/img/a.jpg" alt="">
+                    </div>
+                </div>
+                <!--Content Column-->
+                <div class="content-column col-lg-6">
+					<h3><span class="orange-text">Indigenous</span> Languages</h3>
+                    <h4>Together we can acheive</h4>
+                    <div class=" text">At present, 96 per cent of the world's approximately 6,700 languages are spoken by only 3 per cent of the
+						world's population. Although indigenous peoples make up less than 6% of the global population, they
+						speak more than 4,000 of the world's languages.
+						Conservative estimates suggest that more than half of the world's languages will become extinct by 2100.
+						Other calculations predict that up to 95 per cent of the world's languages may become extinct or
+						seriously endangered by the end of this century. The majority of the languages that are under threat are
+						indigenous languages. It is estimated that one indigenous language dies every two weeks.</div>
+                    <!--Countdown Timer-->
+                	<a class="cart-btn mt-3">Let's Perserve It</a>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- end cart banner section -->
+
+	<!-- testimonail-section -->
+	<div class="testimonail-section mt-150 mb-150">
+		<div class="container">
+			<div class="row">
+				<div class="col-lg-10 offset-lg-1 text-center">
+					<div class="testimonial-sliders">
+						<div class="single-testimonial-slider">
+							<div class="client-avater">
+								<img src="../static/img/avaters/avatar1.png" alt="">
+							</div>
+							<div class="client-meta">
+								<h3>Nelson Mandela <span> South African anti-apartheid revolutionary and political leader</span></h3>
+								<p class="testimonial-body">
+									"If you talk to a man in a language he understands, that goes to his head.If you talk to him in his language, that goes to his heart "
+								</p>
+								<div class="last-icon">
+									<i class="fas fa-quote-right"></i>
+								</div>
+							</div>
+						</div>
+						<div class="single-testimonial-slider">
+							<div class="client-avater">
+								<img src="../static/img/avaters/avatar2.png" alt="">
+							</div>
+							<div class="client-meta">
+								<h3>Max van Sydow <span>Max von Sydow was a Swedish-French actor.</span></h3>
+								<p class="testimonial-body">
+									" I think English is a fantastic ,rich and musical language,but of course your mother tongue is the most important for an actor "
+								</p>
+								<div class="last-icon">
+									<i class="fas fa-quote-right"></i>
+								</div>
+							</div>
+						</div>
+						<div class="single-testimonial-slider">
+							<div class="client-avater">
+								<img src="../static/img/avaters/avatar3.png" alt="">
+							</div>
+							<div class="client-meta">
+								<h3>Mahatma Gandhi<span>Mahatma Gandhi was the primary leader of India's independence movement</span></h3>
+								<p class="testimonial-body">
+									" If the English educated neglect , as they have done and even now continue ,as some do,to be ignorant of their mother tongue ,linguistic will abide "
+								</p>
+								<div class="last-icon">
+									<i class="fas fa-quote-right"></i>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	<!-- end testimonail-section -->
+	
+	<!-- advertisement section -->
+	<div class="abt-section mb-150">
+		<div class="container">
+			<div class="row">
+				<div class="col-lg-6 col-md-12">
+					<div class="abt-bg" >
+						<a href="../static/video/sanskrit.mp4" class="video-play-btn popup-youtube"><i class="fas fa-play"></i></a>
+					</div>
+				</div>
+				<div class="col-lg-6 col-md-12">
+					<div class="abt-text">
+						<p class="top-sub">About</p>
+						<h2>The Language </h2><span class="orange-text">Sanskrit</span></h2>
+						<p>The Sanskrit language has been the traditional means of communication in Hinduism, Jainism, Buddhism, and Sikhism. Sanskrit literature holds the privilege of being used in ancient poetry, drama, and sciences, as well as religious and philosophical texts. The language is believed to have been generated by observing the natural progression of sounds created in the human mouth, thus considering sound as an important element of language formation. This is one of the prime reasons why Sanskrit has been rich in poetry and its expressive quality of bringing out the best meaning through perfect sounds that are soothing to the human ear. Vedic Sanskrit also contains abstract nouns and philosophical terms which are not to be found in any other language. The consonants and vowels are flexible enough to be grouped together to express nuanced ideas. In all, the language is like an endless ocean without a base due to its reach, complexity, and hundreds of words to express a single meaning or object.</p>
+						<a href="https://en.wikipedia.org/wiki/Sanskrit#:~:text=Sanskrit%20(%2F%CB%88s%C3%A6n,of%20the%20Indo%2DEuropean%20languages." target="_blank" class="boxed-btn mt-4">know more</a>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	<!-- end advertisement section -->
+	
+	<!-- shop banner -->
+	<section class="shop-banner">
+    	<div class="container">
+        	<h3>Learn <br> As Many As<span class="orange-text">Language</span></h3>
+            <div class="sale-percent"><span>Now! <br> For</span>Free <span></span></div>
+            <a href="#" class="cart-btn btn-lg">Have Course</a>
+        </div>
+    </section>
+	<!-- end shop banner -->
+
+	<!-- latest news -->
+	<div class="latest-news pt-150 pb-150">
+		<div class="container">
+
+			<div class="row">
+				<div class="col-lg-8 offset-lg-2 text-center">
+					<div class="section-title">	
+						<h3><span class="orange-text">Our</span> News</h3>
+						<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquid, fuga quas itaque eveniet beatae optio.</p>
+					</div>
+				</div>
+			</div>
+
+			<div class="row">
+				<div class="col-lg-4 col-md-6">
+					<div class="single-latest-news">
+						<div class="latest-news-bg news-bg-1"><img src=" ../static/img/latest-news/news-bg-1.jpg"/></div>
+						<div class="news-text-box">
+							<h3>Keeladi excavations: Head of female figurine unearthed in Tamil Nadu</h3>
+							<p class="blog-meta">
+								<span class="author"><i class="fas fa-user"></i>The Times Of India </span>
+								<span class="date"><i class="fas fa-calendar"></i> 04 may, 2022</span>
+							</p>
+							<p class="excerpt">Commissioner and site director of the Keeladi excavations R Sivanantham said the head was found at a depth of 105 cm during the eighth phase of excavation which is being carried out by the state archaeology department. It weighs 74 gram. He said the specimen was beautifully hand-modelled out of terracotta.</p>
+							<a href="https://timesofindia.indiatimes.com/city/chennai/keeladi-excavations-head-of-female-figurine-unearthed/articleshow/91297907.cms" target="_blank" class="read-more-btn">read more <i class="fas fa-angle-right"></i></a>
+						</div>
+					</div>
+				</div>
+				<div class="col-lg-4 col-md-6">
+					<div class="single-latest-news">
+						<div class="latest-news-bg news-bg-2"></div>
+						<div class="news-text-box">
+							<h3>Sanskrit should be made official language: senior BJP leader Subramanian Swamy.</h3>
+							<p class="blog-meta">
+								<span class="author"><i class="fas fa-user"></i> The Economics Time</span>
+								<span class="date"><i class="fas fa-calendar"></i> 9 December, 2021</span>
+							</p>
+							<p class="excerpt">Sanskrit is the mother of all languages and it should be made the official language of the country, senior BJP leader and Rajya Sabha MP Subramanian Swamy said Wednesday. Delivering a lecture on 'Ancient and thriving Hindu civilisation' at the Sri Krishna mutt in Udupi, he said the government should encourage teaching of Sanskrit in all schools as it will improve mental development in children.</p>
+							<a href="https://economictimes.indiatimes.com/news/india-unlimited/csr/policy/sanskrit-should-be-made-official-language-senior-bjp-leader-subramanian-swamy/articleshow/88181933.cms" target="_blank" class="read-more-btn">read more <i class="fas fa-angle-right"></i></a>
+						</div>
+					</div>
+				</div>
+				<div class="col-lg-4 col-md-6 offset-md-3 offset-lg-0">
+					<div class="single-latest-news">
+						<div class="latest-news-bg news-bg-3"><img src=" ../static/img/latest-news/news-bg-3.jpg"/></div>
+						<div class="news-text-box">
+							<h3>Delhi: 4,000 Sanskrit teachers to be trained under professional development programme</h3>
+							<p class="blog-meta">
+								<span class="author"><i class="fas fa-user"></i>The Indian Express</span>
+								<span class="date"><i class="fas fa-calendar"></i> 24 April, 2022</span>
+							</p>
+							<p class="excerpt">The training will be conducted through 50 'Master Trainers of Sanskrit' who will be selected from the pool of self-nominated Post Graduate Trained Teachers (PGT) of Sanskrit and Trained Graduate Teachers (TGT) of Sanskrit under the Directorate of Education.</p>
+							<a href="https://indianexpress.com/article/cities/delhi/delhi-4000-sanskrit-teachers-to-be-trained-under-professional-development-programme-7884611/" target="_blank" class="read-more-btn">read more <i class="fas fa-angle-right"></i></a>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	<!-- end latest news -->
+
+	<!-- logo carousel -->
+	<div class="logo-carousel-section">
+		<div class="container">
+			<div class="row">
+				<div class="col-lg-12">
+					<div class="logo-carousel-inner">
+						<div class="single-logo-item">
+							<img src="../static/img/company-logos/1.png" alt="">
+						</div>
+						<div class="single-logo-item">
+							<img src="../static/img/company-logos/2.png" alt="">
+						</div>
+						<div class="single-logo-item">
+							<img src="../static/img/company-logos/3.png" alt="">
+						</div>
+						<div class="single-logo-item">
+							<img src="../static/img/company-logos/4.png" alt="">
+						</div>
+						<div class="single-logo-item">
+							<img src="../static/img/company-logos/5.png" alt="">
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	<!-- end logo carousel -->
+
+	<!-- footer -->
+	<div class="footer-area" id="Contact">
+		<div class="container">
+			<div class="row">
+				<div class="col-lg-3 col-md-6">
+					<div class="footer-box about-widget">
+						<h2 class="widget-title">About us</h2>
+						<p>Ut enim ad minim veniam perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae.</p>
+					</div>
+				</div>
+				<div class="col-lg-3 col-md-6">
+					<div class="footer-box get-in-touch">
+						<h2 class="widget-title">Get in Touch</h2>
+						<ul>
+							<li>Chrompet chennai</li>
+							<li>example.com</li>
+							<li>+00 111 222 3333</li>
+						</ul>
+					</div>
+				</div>
+				<div class="col-lg-3 col-md-6">
+					<div class="footer-box subscribe">
+						<h2 class="widget-title">Subscribe</h2>
+						<p>Subscribe to our mailing list to get the latest updates.</p>
+						<form action="index.html">
+							<input type="email" placeholder="Email">
+							<button type="submit"><i class="fas fa-paper-plane"></i></button>
+						</form>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	<!-- end footer -->
+	
+	<!-- copyright -->
+	<div class="copyright">
+		<div class="container">
+			<div class="row">
+				<div class="col-lg-6 col-md-12">
+					<p>Copyrights &copy; 2022 - Mitans,  All Rights Reserved.</p>
+				</div>
+				<div class="col-lg-6 text-right col-md-12">
+					<div class="social-icons">
+						<ul>
+							<li><a href="#" target="_blank"><i class="fab fa-facebook-f"></i></a></li>
+							<li><a href="#" target="_blank"><i class="fab fa-twitter"></i></a></li>
+							<li><a href="#" target="_blank"><i class="fab fa-instagram"></i></a></li>
+							<li><a href="#" target="_blank"><i class="fab fa-linkedin"></i></a></li>
+							<li><a href="#" target="_blank"><i class="fab fa-dribbble"></i></a></li>
+						</ul>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	<!-- end copyright -->
+	{%endblock%}
+	{%block script%}
+	<!-- jquery -->
+	<script src="../static/js/jquery-1.11.3.min.js"></script>
+	<!-- bootstrap -->
+	<script src="../static/bootstrap/js/bootstrap.min.js"></script>
+	<!-- isotope -->
+	<script src="../static/js/jquery.isotope-3.0.6.min.js"></script>
+	<!-- waypoints -->
+	<script src="../static/js/waypoints.js"></script>
+	<!-- owl carousel -->
+	<script src="../static/js/owl.carousel.min.js"></script>
+	<!-- magnific popup -->
+	<script src="../static/js/jquery.magnific-popup.min.js"></script>
+	<!-- mean menu -->
+	<script src="../static/js/jquery.meanmenu.min.js"></script>
+	<!-- sticker js -->
+	<script src="../static/js/sticker.js"></script>
+	<!-- main js -->
+	<script src="../static/js/main.js"></script>
+	
+	{%endblock%}
