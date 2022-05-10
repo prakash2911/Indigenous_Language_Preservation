@@ -5,22 +5,7 @@
   <link rel="stylesheet" href="../static/bootstrap/css/bootstrap.min.css">
 {%endblock %}
 {%block body%}
-{% if {{session.utype }}== 'organisation' %}
-    <style>
-      .wrapper .sidebar{
-          background-color: cadetblue;
-      }
-    </style>
-    <script>
-    </script>
-{%endif%}
-{% if {{session.utype }}== 'organisation' %}
-    <style>
-      .wrapper .sidebar{
-          background-color:darkolivegreen;
-      }
-    </style>
-{%endif%}
+
 <div class="wrapper">
   <div class="sidebar">
       <h3>DashBoard</h3>
@@ -73,10 +58,12 @@
   </div>
 </div>
 <div class="file-upload js-hidden" id="upload">
+  <form action="/upload" method="post">
   <button class="file-upload-btn" type="button" onclick="$('.file-upload-input').trigger( 'click' )">SELECT THE FILE</button>
 
   <div class="image-upload-wrap">
-    <input class="file-upload-input" type='file' onchange="readURL(this);" accept="image/*" />
+    
+    <input class="file-upload-input" type='file' onchange="readURL(this);" name="inputfile" accept="image/*" />
     <div class="drag-text">
       <h3>Drag and drop a file or select add File</h3>
     </div>
@@ -85,11 +72,13 @@
     <img class="file-upload-image" src="#" alt="your image" />
     <div class="image-title-wrap">
       <button type="button" onclick="removeUpload()" class="remove-image">Remove <span class="image-title">Uploaded Image</span></button>
+      <button type="submit" class="file-upload-btn">submit</button>
     </div>
   </div>
+</form>
 </div>
 <div id="works" class="js-hidden">
-
+  <h2 style="font-weight: 1px;text-align: center;margin-top: 300px;margin-left: 700px;">No document</h2>
 </div>
 <div id="po" class="js-hidden topnav">
   <nav class="navbar navbar-inverse">

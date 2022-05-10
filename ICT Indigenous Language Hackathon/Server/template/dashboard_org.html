@@ -1,0 +1,67 @@
+{% extends 'base.html'%}
+{% block head%}
+	<title>DashBoard</title>
+	<link rel="stylesheet" href="../static/css/dashboard.css">
+  <link rel="stylesheet" href="../static/bootstrap/css/bootstrap.min.css">
+{%endblock %}
+{%block body%}
+
+<div class="wrapper">
+  <div class="sidebar" style="background-color: rgb(206, 97, 57);">
+      <h3 style="font-size:20px ;">Organization</h3>
+      <ul>
+          <li><a onclick=" document.getElementById('upload').classList.remove('js-hidden');  document.getElementById('works').classList.add('js-hidden');  document.getElementById('po').classList.add('js-hidden'); "><i class="fas fa-address-card"></i>Uploads</a></li>
+          <li><a onclick=" document.getElementById('works').classList.remove('js-hidden');  document.getElementById('po').classList.add('js-hidden');  document.getElementById('upload').classList.add('js-hidden'); "><i class="fas fa-project-diagram"></i>My Document</a></li>
+          <li><a onclick="document.getElementById('po').classList.remove('js-hidden');document.getElementById('works').classList.add('js-hidden');   document.getElementById('upload').classList.add('js-hidden'); "><i class="fas fa-bars-progress"></i>Explore</a></li>
+      </ul> 
+  </div>
+<div class="file-upload js-hidden" id="upload">
+  <form action="/upload" method="post">
+  <button class="file-upload-btn" type="button" onclick="$('.file-upload-input').trigger( 'click' )">SELECT THE FILE</button>
+
+  <div class="image-upload-wrap">
+    
+    <input class="file-upload-input" type='file' onchange="readURL(this);" name="inputfile" accept="image/*" />
+    <div class="drag-text">
+      <h3>Drag and drop a file or select add File</h3>
+    </div>
+  </div>
+  <div class="file-upload-content">
+    <img class="file-upload-image" src="#" alt="your image" />
+    <div class="image-title-wrap">
+      <button type="button" onclick="removeUpload()" class="remove-image">Remove <span class="image-title">Uploaded Image</span></button>
+      <button type="submit" class="file-upload-btn">submit</button>
+    </div>
+  </div>
+</form>
+</div>
+<div id="works" class="js-hidden">
+  <h2 style="font-weight: 1px;text-align: center;margin-top: 300px;margin-left: 700px;">No document</h2>
+</div>
+<div id="po" class="js-hidden topnav">
+  <nav class="navbar navbar-inverse">
+    <div class="container-fluid">
+      <div class="navbar-header">
+        <a class="navbar-brand title" href="#">EXPLORE</a>
+      </div>
+      <form class="navbar-form " action="">
+        <div class="input-group">
+          <input type="text" class="form-control" placeholder="Search" name="search">
+          <div class="input-group-btn">
+            <button class="btn btn-default" type="submit">
+              <i class="fas fa-search"></i>
+            </button>
+          </div>
+        </div>
+      </form>
+    </div>
+  </nav>
+  <h2 style="font-weight: 1px;text-align: center;margin-top: 300px;">No document</h2>
+</div>
+
+{%endblock%}
+{%block script%}
+<script src="../static/js/jquery-1.11.3.min.js"></script>
+<script src="../static/bootstrap/js/bootstrap.bundle.min.js"></script>
+<script src="../static/js/dashboard.js"></script>
+{%endblock%}

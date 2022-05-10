@@ -2,6 +2,7 @@ from flask import Flask, render_template, request, redirect, url_for, session
 from flask_mysqldb import MySQL
 import MySQLdb.cursors
 from flask_pymongo import PyMongo
+import pymongo
 import re
 
 app = Flask(__name__, template_folder='template')
@@ -9,28 +10,31 @@ app = Flask(__name__, template_folder='template')
 
 app.secret_key = 'Tahve bqltuyej tbrjereq qobfd MvIaTq cmanmvpcuxsz iesh tihkel CnTu dretpyauritompeanstd '
 
-client = PyMongo.MongoClient('mongodb+srv://root:<admin>@ict-hackathon.oksth.mongodb.net/ict-hackathon?retryWrites=true&w=majority')
-app.config['MONGODB_URI'] = 'mongodb+srv://root:<admin>@ict-hackathon.oksth.mongodb.net/ict-hackathon?retryWrites=true&w=majority'
+client = pymongo.MongoClient('mongodb+srv://root:admin@ict-hackathon.oksth.mongodb.net')
+db = client.stagging
+mongo = db['documents']
 
-mongo = client.test
+    
+
 app.config['MYSQL_HOST'] = 'localhost'
 app.config['MYSQL_USER'] = 'root'
 app.config['MYSQL_PASSWORD'] = 'admin'
-app.config['MYSQL_DB'] = 'ict_hackthon'
+app.config['MYSQL_DB'] = 'ict_hackathon'
 app.config['MYSQL_PORT'] = 3306
 
 mysql = MySQL(app)
 
-
-@app.route('/home')
+@app.route('/')
 def index():
     return render_template('Homepage.html')
 
+@app.route('/dash')
+def dash():
+    return render_template('dashboard.html')
 
 @app.route('/ls')
 def ls():
     return render_template('login.html')
-
 
 @app.route('/login', methods=['get', 'post'])
 def login():
@@ -52,7 +56,6 @@ def login():
         msg = 'Incorrect username / password !'
     return render_template('login.html')
 
-
 @app.route('/logout', methods=['POST'])
 def logout():
     returner = {}
@@ -63,27 +66,24 @@ def logout():
     returner['status'] = "logout success"
     return returner
 
-
-@app.route('/dashboard/upload', methods=['POST'])
+@app.route('/upload', methods=['POST'])
 def upload():
-    if ['loggedin' == True]:
         if 'inputfile' in request.files:
             file = request.files['inputfile']
             mongo.save_file(file.filename, file)
             mongo.db.documents.insert(
                 {'username': '%s', 'document': file.filename}, session['username'])
             mongo.session.commit()
+            return f'Uploaded: {file.filename}'
+        return "done!"
 
-        return f'Uploaded: {file.filename}'
-
-
-@app.route('/dashboard/works/<username>', methods=['POST'])
+@app.route('/works/<username>', methods=['POST'])
 def retrive(username):
     if ['loggedin' == True]:
         user = mongo.db.user.find_one_or_404({'username' : username})
         return mongo.send_file('file', filename=user['document'])
 
-@app.route('/dashboard/polling', methods=['POST'])
+@app.route('/polling', methods=['POST'])
 def polling():
     msg = {}
     if ['loggedin' == True]:
@@ -110,7 +110,6 @@ def polling():
         msg = 'You have casted your vote successfully!'
         return render_template("dashboard.html", msg=msg )
 
-
 @app.route('/pollingresults', methods=['POST'])
 def pollingresult():
     returner = {}
@@ -126,7 +125,6 @@ def pollingresult():
     elif (app <= napp):
         returner['status'] = "Document hasn't got Approval!"
     return returner
-
 
 @app.route('/register', methods=['GET', 'POST'])
 def register():
@@ -154,7 +152,7 @@ def register():
     return render_template("login.html", msg=msg)
 
 
-@app.route('/dashboard/profile', methods=['POST'])
+@app.route('/profile', methods=['POST'])
 def profile():
     returner = {}
     if ['loggedin' == True]:
