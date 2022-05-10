@@ -9,10 +9,10 @@ app = Flask(__name__, template_folder='template')
 
 app.secret_key = 'Tahve bqltuyej tbrjereq qobfd MvIaTq cmanmvpcuxsz iesh tihkel CnTu dretpyauritompeanstd '
 
+client = PyMongo.MongoClient('mongodb+srv://root:<admin>@ict-hackathon.oksth.mongodb.net/ict-hackathon?retryWrites=true&w=majority')
+app.config['MONGODB_URI'] = 'mongodb+srv://root:<admin>@ict-hackathon.oksth.mongodb.net/ict-hackathon?retryWrites=true&w=majority'
 
-app.config['MONGODB_URI'] = 'mongodb+srv://root:<admin>@cluster0.yy3ca.mongodb.net/Cluster0?retryWrites=true&w=majority'
-
-mongo = PyMongo()
+mongo = client.test
 app.config['MYSQL_HOST'] = 'localhost'
 app.config['MYSQL_USER'] = 'root'
 app.config['MYSQL_PASSWORD'] = 'admin'
@@ -64,7 +64,7 @@ def logout():
     return returner
 
 
-@app.route('/upload', methods=['POST'])
+@app.route('/dashboard/upload', methods=['POST'])
 def upload():
     if ['loggedin' == True]:
         if 'inputfile' in request.files:
@@ -77,26 +77,19 @@ def upload():
         return f'Uploaded: {file.filename}'
 
 
-@app.route('/document/filename', methods=['POST'])
-def retrive(filename):
+@app.route('/dashboard/works/<username>', methods=['POST'])
+def retrive(username):
     if ['loggedin' == True]:
-        return mongo.send_file(filename)
+        user = mongo.db.user.find_one_or_404({'username' : username})
+        return mongo.send_file('file', filename=user['document'])
 
-
-@app.route('/polling', methods=['POST'])
+@app.route('/dashboard/polling', methods=['POST'])
 def polling():
-    returner = {}
+    msg = {}
     if ['loggedin' == True]:
-        poll = request.json.get('poll')
-        print(poll)
+        poll = request.form['poll']
         cursor = mysql.connection.cursor(MySQLdb.cursors.DictCursor)
-        if (poll == 'None'):
-            cursor.execute('select * from polloptions')
-            data = cursor.fetchall()
-            data = list(data)
-            msg = data
-            return returner
-        elif [session['utype'] == 'Vuser']:
+        if [session['utype'] == 'Vuser']:
             if [poll == 'Approval']:
                 cursor.execute('INSERT INTO polling VALUES (NULL, %s, %s, %s, %s)',
                                (session['username'], session['utype'], '10', '',))
@@ -114,7 +107,8 @@ def polling():
                 cursor.execute('INSERT INTO polling VALUES (NULL, %s, %s, %s, %s)',
                                (session['username'], session['utype'], '', '1',))
                 mysql.connection.commit()
-        returner['status'] = 'You have successfully casted your vote!'
+        msg = 'You have casted your vote successfully!'
+        return render_template("dashboard.html", msg=msg )
 
 
 @app.route('/pollingresults', methods=['POST'])
@@ -129,7 +123,7 @@ def pollingresult():
     napp = int(napp)
     if (app > napp):
         returner['status'] = 'Document has got Approval!'
-    elif (app < napp):
+    elif (app <= napp):
         returner['status'] = "Document hasn't got Approval!"
     return returner
 
@@ -137,7 +131,6 @@ def pollingresult():
 @app.route('/register', methods=['GET', 'POST'])
 def register():
     msg = ''
-    print(1)
     if request.method == 'POST' and 'username' in request.form and 'password1' in request.form and 'email1' in request.form:
 
         username = request.form['username']
@@ -158,12 +151,11 @@ def register():
             cursor.execute('INSERT INTO accounts VALUES (NULL, %s, %s, %s, %s)',
                         (username, password, email, utype))
             mysql.connection.commit()
-            print(msg)
             msg = 'You have successfully registered!'
     return render_template("login.html", msg=msg)
 
 
-@app.route('/profile', methods=['POST'])
+@app.route('/dashboard/profile', methods=['POST'])
 def profile():
     returner = {}
     if ['loggedin' == True]:
