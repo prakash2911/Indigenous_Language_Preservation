@@ -26,7 +26,7 @@ body{
   position: fixed;
 }
 
-.wrapper .sidebar h2{
+.wrapper .sidebar h3{
   color: #fff;
   text-transform: uppercase;
   text-align: center;
@@ -264,23 +264,35 @@ body {
   transition: all .2s ease;
 }
 #po{
-  margin: auto;
-  display: inline-flex;
+  margin:auto;
+  font-family: "Open Sans", sans-serif;
+  font-weight: 400;
+  font-size: 1rem;
+  letter-spacing: 0.1px;
+  color: #051922; 
 }
-.polls {
-  /* Background color */
-  background-color:rgb(99, 39, 120);
-  color: #fff;
-  /* Stick to the left */
-  left: 0;
-  position: sticky;
-  /* Displayed on top of other rows when scrolling */
-  z-index: 9999;
-  width: 75%;
- 
+.title{
+  margin-left: 100px;
+  color: #682773;
+  font-weight: bolder;
 }
-.check
-{
-    background-color: #bdb8d7;
-    color: #682773;
+
+.column {
+  float: left;
+  width: 100%;
+  padding: 10px;
+  margin-left: 200px;
+  padding-left: 400px;
+  padding-right: 400px;
+  height: 20%;
+  justify-items: center;
 }
+
+/* Clear floats after the columns */
+.row:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+/* When the screen is less than 600px wide, stack the links and the search field vertically instead of horizontally */

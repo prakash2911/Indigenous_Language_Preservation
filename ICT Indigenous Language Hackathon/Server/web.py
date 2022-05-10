@@ -50,7 +50,7 @@ def login():
         return render_template('index.html', msg=msg)
     else:
         msg = 'Incorrect username / password !'
-    return render_template('index.html', msg=msg)
+    return render_template('login.html')
 
 
 @app.route('/logout', methods=['POST'])
@@ -139,7 +139,6 @@ def register():
     msg = ''
     print(1)
     if request.method == 'POST' and 'username' in request.form and 'password1' in request.form and 'email1' in request.form:
-
         username = request.form['username']
         password = request.form['password1']
         email = request.form['email1']
