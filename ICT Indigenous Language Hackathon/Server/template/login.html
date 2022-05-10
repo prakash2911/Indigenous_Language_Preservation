@@ -22,11 +22,12 @@
 
 			<div class="signup">
 				<form action="{{url_for('register')}}" method="post">
-					<label for="chk" aria-hidden="true">Sign up</label>
+					<label for="chk" aria-hidden="true" class="ls">Sign up</label>
 					<input type="text" name="username" placeholder="User name" required="">
 					<input type="email" name="email1" placeholder="Email" required="">
 					<input type="password" name="password1" placeholder="Password" required="">
-						<select id="utype" name="utype" required>
+					<label for="utype" class="la">user type: </label>	
+					<select id="utype" name="utype" required>
 							<option value="Vuser">Verified User</option>
 							<option value="Pro">professor</option>
 							<option value="stu">Student</option>
@@ -37,7 +38,7 @@
 
 			<div class="login">
 				<form action="{{url_for('login')}}" method="post">
-					<label for="chk" aria-hidden="true">Login</label>
+					<label for="chk" aria-hidden="true" class="ls">Login</label>
 					<input type="text" name="username" placeholder="Username" required="">
 					<input type="password" name="password" placeholder="Password" required="">
 					<button>Login</button>

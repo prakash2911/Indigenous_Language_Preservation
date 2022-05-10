@@ -47,7 +47,7 @@ def login():
         session['account_id'] = account['account_id']
         session['username'] = account['username']
         msg = 'Logged in successfully !'
-        return render_template('Homepage.html', msg=msg)
+        return render_template('index.html', msg=msg)
     else:
         msg = 'Incorrect username / password !'
     return render_template('index.html', msg=msg)
@@ -55,7 +55,6 @@ def login():
 
 @app.route('/logout', methods=['POST'])
 def logout():
-
     returner = {}
     session.pop('loggedin', None)
     session.pop('email', None)
@@ -97,7 +96,7 @@ def polling():
             data = list(data)
             msg = data
             return returner
-        elif [session['utype'] == 'verified user']:
+        elif [session['utype'] == 'Vuser']:
             if [poll == 'Approval']:
                 cursor.execute('INSERT INTO polling VALUES (NULL, %s, %s, %s, %s)',
                                (session['username'], session['utype'], '10', '',))
@@ -106,7 +105,7 @@ def polling():
                 cursor.execute('INSERT INTO polling VALUES (NULL, %s, %s, %s, %s)',
                                (session['username'], session['utype'], '', '10',))
                 mysql.connection.commit()
-        elif [session['utype'] != 'verified user']:
+        elif [session['utype'] != 'Vuser']:
             if [poll == 'Approval']:
                 cursor.execute('INSERT INTO polling VALUES (NULL, %s, %s, %s, %s)',
                                (session['username'], session['utype'], '1', '',))
@@ -150,7 +149,7 @@ def register():
         account = cursor.fetchone()
         if account:
             msg = 'Account already exists'
-        elif (utype == 'professor' or utype == 'verified user'):
+        elif (utype == 'professor' or utype == 'Vuser'):
             if not re.match(r'[.edu]+', email):
                 msg = 'Not a University/Verified email address'
         elif not re.match(r'[A-Za-z0-9]+', username):
