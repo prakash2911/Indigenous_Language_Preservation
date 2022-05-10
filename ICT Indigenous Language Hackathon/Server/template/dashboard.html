@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>DashBoard</title>
+	<link rel="stylesheet" href="../static/css/dashboard.css">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    <script class="jsbin" src="https://ajax.googleapis.com/ajax/libs/jquery/1/jquery.min.js"></script>  
+	<script src="https://kit.fontawesome.com/b99e675b6e.js"></script>
+  <link rel="stylesheet" href="../static/bootstrap/css/bootstrap.min.css">
+</head>
+<body>
+
+<div class="wrapper">
+    <div class="sidebar">
+        <h2>DashBoard</h2>
+        <ul>
+            <li><a onclick="document.getElementById('upload').classList.add('js-hidden'); document.getElementById('profile').classList.remove('js-hidden'); document.getElementById('works').classList.add('js-hidden');  document.getElementById('po').classList.add('js-hidden'); "><i class="fas fa-user"></i>Profile</a></li>
+            <li><a onclick="document.getElementById('profile').classList.add('js-hidden'); document.getElementById('upload').classList.remove('js-hidden');  document.getElementById('works').classList.add('js-hidden');  document.getElementById('po').classList.add('js-hidden'); "><i class="fas fa-address-card"></i>Uploads</a></li>
+            <li><a onclick="document.getElementById('profile').classList.add('js-hidden'); document.getElementById('works').classList.remove('js-hidden');  document.getElementById('po').classList.add('js-hidden');  document.getElementById('upload').classList.add('js-hidden'); "><i class="fas fa-project-diagram"></i>Works</a></li>
+            <li><a onclick="document.getElementById('profile').classList.add('js-hidden');document.getElementById('po').classList.remove('js-hidden');document.getElementById('works').classList.add('js-hidden');   document.getElementById('upload').classList.add('js-hidden'); "><i class="fas fa-bars-progress"></i>Polls</a></li>
+        </ul> 
+        <div class="social_media">
+          <a href="#"><i class="fab fa-facebook-f"></i></a>
+          <a href="#"><i class="fab fa-twitter"></i></a>
+          <a href="#"><i class="fab fa-instagram"></i></a>
+      </div>
+    </div>
+    <div class="main_content" id = "profile">
+      <div class="container rounded bg-white mt-5 mb-5">
+        <div class="row">
+            <div class="col-md-3 border-right">
+                <div class="d-flex flex-column align-items-center text-center p-3 py-5"><img class="rounded-circle mt-5" width="150px" src="https://st3.depositphotos.com/15648834/17930/v/600/depositphotos_179308454-stock-illustration-unknown-person-silhouette-glasses-profile.jpg"><span class="font-weight-bold">Edogaru</span><span class="text-black-50">edogaru@mail.com.my</span><span> </span></div>
+            </div>
+            <div class="col-md-5 border-right">
+                <div class="p-3 py-5">
+                    <div class="d-flex justify-content-between align-items-center mb-3">
+                        <h4 class="text-right">Profile Settings</h4>
+                    </div>
+                    <div class="row mt-2">
+                        <div class="col-md-6"><label class="labels">Name</label><input type="text" class="form-control" placeholder="first name" value=""></div>
+                        <div class="col-md-6"><label class="labels">Lname</label><input type="text" class="form-control" value="" placeholder="surname"></div>
+                    </div>
+                    <div class="row mt-3">
+                        <div class="col-md-12"><label class="labels">Mobile Number</label><input type="text" class="form-control" placeholder="enter phone number" value=""></div>
+                        <div class="col-md-12"><label class="labels">Address Line 1</label><input type="text" class="form-control" placeholder="enter address line 1" value=""></div>
+                        <div class="col-md-12"><label class="labels">Address Line 2</label><input type="text" class="form-control" placeholder="enter address line 2" value=""></div>
+                        <div class="col-md-12"><label class="labels">Postcode</label><input type="text" class="form-control" placeholder="enter address line 2" value=""></div>
+                        <div class="col-md-12"><label class="labels">State</label><input type="text" class="form-control" placeholder="enter address line 2" value=""></div>
+                        <div class="col-md-12"><label class="labels">Area</label><input type="text" class="form-control" placeholder="enter address line 2" value=""></div>
+                        <div class="col-md-12"><label class="labels">Education</label><input type="text" class="form-control" placeholder="education" value=""></div>
+                    </div>
+                    <div class="row mt-3">
+                        <div class="col-md-6"><label class="labels">Country</label><input type="text" class="form-control" placeholder="country" value=""></div>
+                        <div class="col-md-6"><label class="labels">State/Region</label><input type="text" class="form-control" value="" placeholder="state"></div>
+                    </div>
+                    <div class="mt-5 text-center"><button class="btn btn-primary profile-button" type="button">Save Profile</button></div>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="p-3 py-5">
+                    <div class="d-flex justify-content-between align-items-center experience"><span>Edit Experience</span><span class="border px-3 p-1 add-experience"><i class="fa fa-plus"></i>&nbsp;Experience</span></div><br>
+                    <div class="col-md-12"><label class="labels">Experience in Designing</label><input type="text" class="form-control" placeholder="experience" value=""></div> <br>
+                    <div class="col-md-12"><label class="labels">Additional Details</label><input type="text" class="form-control" placeholder="additional details" value=""></div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="file-upload js-hidden" id="upload">
+    <button class="file-upload-btn" type="button" onclick="$('.file-upload-input').trigger( 'click' )">SELECT THE FILE</button>
+  
+    <div class="image-upload-wrap">
+      <input class="file-upload-input" type='file' onchange="readURL(this);" accept="image/*" />
+      <div class="drag-text">
+        <h3>Drag and drop a file or select add File</h3>
+      </div>
+    </div>
+    <div class="file-upload-content">
+      <img class="file-upload-image" src="#" alt="your image" />
+      <div class="image-title-wrap">
+        <button type="button" onclick="removeUpload()" class="remove-image">Remove <span class="image-title">Uploaded Image</span></button>
+      </div>
+    </div>
+  </div>
+  <div id="works" class="js-hidden">
+
+  </div>
+  <div id="po" class="js-hidden">
+  <table>
+    <thead>
+        <tr>
+            <th class="polls">
+                POLLING
+            </th>
+            <td class="check">
+              <form action="{{url_for()}}" method="post">
+                <input type="checkbox" name="refuse" ><label>REFUSE</label>
+                <input type="checkbox" name="accept" ><label>ACCEPT</label>
+              </form>
+            </td>
+        </tr>
+    </thead>
+    <tbody>
+    </tbody>
+</table>
+  </div>
+
+</div>
+    
+</body>
+<script src="../static/js/jquery-1.11.3.min.js"></script>
+<script src="../static/bootstrap/js/bootstrap.bundle.min.js"></script>
+<script src="../static/js/dashboard.js"></script>
+</html>
